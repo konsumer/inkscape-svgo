@@ -22,7 +22,9 @@ process.stdin.on('end', () => {
   do {
     m = re.exec(s)
     if (m) {
-      console.log(`<param name="${m[1]}" type="boolean" gui-text="${entities.encode(m[2])}">false</param>`)
+      console.log(`    <param name="enable=${m[1]}" type="boolean" gui-text="${entities.encode(m[2])}">false</param>`)
     }
   } while (m)
+  console.log(`    <param name="pretty" type="boolean" gui-text="Make SVG pretty printed">false</param>`)
+  console.log(`    <param name="multipass" type="boolean" gui-text="Enable multipass">false</param>`)
 })
