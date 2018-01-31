@@ -2,62 +2,61 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
     <_name>SVGO Optimized SVG File</_name>
     <id>org.inkscape.output.konsumersvgo</id>
-<param name="options" type="notebook">
-<page name="page_1" gui-text="First page">
-    <param name="enable=addAttributesToSVGElement" type="boolean" gui-text="adds attributes to an outer &lt;svg&gt; element">false</param>
-    <param name="enable=addClassesToSVGElement" type="boolean" gui-text="adds classnames to an outer &lt;svg&gt; element">false</param>
-    <param name="enable=cleanupAttrs" type="boolean" gui-text="cleanups attributes from newlines, trailing and repeating spaces">false</param>
-    <param name="enable=cleanupEnableBackground" type="boolean" gui-text="remove or cleanup enable-background attribute when possible">false</param>
-    <param name="enable=cleanupIDs" type="boolean" gui-text="removes unused IDs and minifies used">false</param>
-    <param name="enable=cleanupListOfValues" type="boolean" gui-text="rounds list of values to the fixed precision">false</param>
-    <param name="enable=cleanupNumericValues" type="boolean" gui-text="rounds numeric values to the fixed precision, removes default ‘px’ units">false</param>
-    <param name="enable=collapseGroups" type="boolean" gui-text="collapses useless groups">false</param>
-    <param name="enable=convertColors" type="boolean" gui-text="converts colors: rgb() to #rrggbb and #rrggbb to #rgb">false</param>
-    <param name="enable=convertPathData" type="boolean" gui-text="optimizes path data: writes in shorter form, applies transformations">false</param>
-    <param name="enable=convertShapeToPath" type="boolean" gui-text="converts basic shapes to more compact path form">false</param>
-    <param name="enable=convertStyleToAttrs" type="boolean" gui-text="converts style to attributes">false</param>
-    <param name="enable=convertTransform" type="boolean" gui-text="collapses multiple transformations and optimizes it">false</param>
-    <param name="enable=inlineStyles" type="boolean" gui-text="inline styles (additional options)">false</param>
-    <param name="enable=mergePaths" type="boolean" gui-text="merges multiple paths in one if possible">false</param>
-    <param name="enable=minifyStyles" type="boolean" gui-text="minifies styles and removes unused styles based on usage data">false</param>
-    <param name="enable=moveElemsAttrsToGroup" type="boolean" gui-text="moves elements attributes to the existing group wrapper">false</param>
-</page>
-<page name="page_2" gui-text="Second page">
-    <param name="enable=moveGroupAttrsToElems" type="boolean" gui-text="moves some group attributes to the content elements">false</param>
-    <param name="enable=prefixIds" type="boolean" gui-text="prefix IDs">false</param>
-    <param name="enable=removeAttrs" type="boolean" gui-text="removes specified attributes">false</param>
-    <param name="enable=removeComments" type="boolean" gui-text="removes comments">false</param>
-    <param name="enable=removeDesc" type="boolean" gui-text="removes &lt;desc&gt;">false</param>
-    <param name="enable=removeDimensions" type="boolean" gui-text="removes width and height in presence of viewBox (opposite to removeViewBox, disable it first)">false</param>
-    <param name="enable=removeDoctype" type="boolean" gui-text="removes doctype declaration">false</param>
-    <param name="enable=removeEditorsNSData" type="boolean" gui-text="removes editors namespaces, elements and attributes">false</param>
-    <param name="enable=removeElementsByAttr" type="boolean" gui-text="removes arbitrary elements by ID or className (disabled by default)">false</param>
-    <param name="enable=removeEmptyAttrs" type="boolean" gui-text="removes empty attributes">false</param>
-    <param name="enable=removeEmptyContainers" type="boolean" gui-text="removes empty container elements">false</param>
-    <param name="enable=removeEmptyText" type="boolean" gui-text="removes empty &lt;text&gt; elements">false</param>
-    <param name="enable=removeHiddenElems" type="boolean" gui-text="removes hidden elements (zero sized, with absent attributes)">false</param>
-    <param name="enable=removeMetadata" type="boolean" gui-text="removes &lt;metadata&gt;">false</param>
-    <param name="enable=removeNonInheritableGroupAttrs" type="boolean" gui-text="removes non-inheritable group’s presentational attributes">false</param>
-</page>
-<page name="page_3" gui-text="Third page">
-    <param name="enable=removeRasterImages" type="boolean" gui-text="removes raster images (disabled by default)">false</param>
-    <param name="enable=removeScriptElement" type="boolean" gui-text="removes &lt;script&gt; elements (disabled by default)">false</param>
-    <param name="enable=removeStyleElement" type="boolean" gui-text="removes &lt;style&gt; element (disabled by default)">false</param>
-    <param name="enable=removeTitle" type="boolean" gui-text="removes &lt;title&gt;">false</param>
-    <param name="enable=removeUnknownsAndDefaults" type="boolean" gui-text="removes unknown elements content and attributes, removes attrs with default values">false</param>
-    <param name="enable=removeUnusedNS" type="boolean" gui-text="removes unused namespaces declaration">false</param>
-    <param name="enable=removeUselessDefs" type="boolean" gui-text="removes elements in &lt;defs&gt; without id">false</param>
-    <param name="enable=removeUselessStrokeAndFill" type="boolean" gui-text="removes useless stroke and fill attributes">false</param>
-    <param name="enable=removeViewBox" type="boolean" gui-text="removes viewBox attribute when possible">false</param>
-    <param name="enable=removeXMLNS" type="boolean" gui-text="removes xmlns attribute (for inline svg, disabled by default)">false</param>
-    <param name="enable=removeXMLProcInst" type="boolean" gui-text="removes XML processing instructions">false</param>
-    <param name="enable=sortAttrs" type="boolean" gui-text="sorts element attributes (disabled by default)">false</param>
+    <param name="options" type="notebook">
+        <page name="page_1" gui-text="Optimization">
+            <param name="precision" type="int" min="0" max="4" gui-text="Precision">2</param>
+            <param name="pretty" type="boolean" gui-text="Make SVG pretty printed">false</param>
+            <param name="enable=sortAttrs" type="boolean" gui-text="sorts element attributes">false</param>
+            <param name="multipass" type="boolean" gui-text="Enable multipass">true</param>  
+            <param name="enable=cleanupAttrs" type="boolean" gui-text="cleanups attributes from newlines, trailing and repeating spaces">true</param>
+            <param name="enable=cleanupEnableBackground" type="boolean" gui-text="remove or cleanup enable-background attribute when possible">true</param>
+            <param name="enable=cleanupIDs" type="boolean" gui-text="remove unused IDs and minifies used">false</param>
+            <param name="enable=cleanupNumericValues" type="boolean" gui-text="rounds numeric values to the fixed precision, remove default ‘px’ units">true</param>
+            <param name="enable=collapseGroups" type="boolean" gui-text="collapses useless groups">true</param>
+            <param name="enable=convertColors" type="boolean" gui-text="converts colors: rgb() to #rrggbb and #rrggbb to #rgb">true</param>
+            <param name="enable=convertPathData" type="boolean" gui-text="optimizes path data: writes in shorter form, applies transformations">true</param>
+            <param name="enable=convertShapeToPath" type="boolean" gui-text="converts basic shapes to more compact path form">false</param>
+            <param name="enable=convertStyleToAttrs" type="boolean" gui-text="converts style to attributes">false</param>
+            <param name="enable=convertTransform" type="boolean" gui-text="collapses multiple transformations and optimizes it">true</param>
+            <param name="enable=mergePaths" type="boolean" gui-text="merges multiple paths in one if possible">true</param>
+            <param name="enable=minifyStyles" type="boolean" gui-text="minify styles and remove unused styles based on usage data">true</param>
+            <param name="enable=moveElemsAttrsToGroup" type="boolean" gui-text="moves elements attributes to the existing group wrapper">false</param>
+        </page>
+        <page name="page_2" gui-text="Removal">
+            <param name="enable=removeViewBox" type="boolean" gui-text="remove viewBox attribute when possible">false</param>
+            <param name="enable=removeDimensions" type="boolean" gui-text="remove width and height in presence of viewBox (opposite to removeViewBox, disable it first)">false</param>
+            <param name="enable=removeUnknownsAndDefaults" type="boolean" gui-text="remove unknown elements content and attributes, remove attrs with default values">true</param>
+            <param name="enable=removeUnusedNS" type="boolean" gui-text="remove unused namespaces declaration">true</param>
+            <param name="enable=removeUselessDefs" type="boolean" gui-text="remove elements in &lt;defs&gt; without id">true</param>
+            <param name="enable=removeUselessStrokeAndFill" type="boolean" gui-text="remove useless stroke and fill attributes">true</param>
+            <param name="enable=moveGroupAttrsToElems" type="boolean" gui-text="moves some group attributes to the content elements">false</param>
+            <param name="enable=removeRasterImages" type="boolean" gui-text="remove raster images">false</param>
+            <param name="enable=removeScriptElement" type="boolean" gui-text="remove &lt;script&gt; elements">false</param>
+            <param name="enable=removeStyleElement" type="boolean" gui-text="remove &lt;style&gt; element">false</param>
+            <param name="enable=removeTitle" type="boolean" gui-text="remove &lt;title&gt;">true</param>
+            <param name="enable=removeXMLNS" type="boolean" gui-text="remove xmlns attribute (for inline svg, disabled by default)">false</param>
+            <param name="enable=removeXMLProcInst" type="boolean" gui-text="remove XML processing instructions">true</param>
+            <param name="enable=removeMetadata" type="boolean" gui-text="remove &lt;metadata&gt;">true</param>
+            <param name="enable=removeNonInheritableGroupAttrs" type="boolean" gui-text="remove non-inheritable group’s presentational attributes">true</param>
+            <param name="enable=removeComments" type="boolean" gui-text="remove comments">true</param>
+            <param name="enable=removeDesc" type="boolean" gui-text="remove &lt;desc&gt;">true</param>
+            <param name="enable=removeDoctype" type="boolean" gui-text="remove doctype declaration">true</param>
+            <param name="enable=removeEditorsNSData" type="boolean" gui-text="remove editors namespaces, elements and attributes">true</param>
+            <param name="enable=removeEmptyAttrs" type="boolean" gui-text="remove empty attributes">false</param>
+            <param name="enable=removeEmptyContainers" type="boolean" gui-text="remove empty container elements">false</param>
+            <param name="enable=removeEmptyText" type="boolean" gui-text="remove empty &lt;text&gt; elements">false</param>
+            <param name="enable=removeHiddenElems" type="boolean" gui-text="remove hidden elements (zero sized, with absent attributes)">false</param>
+        </page>
+    </param>
     
-    <param name="pretty" type="boolean" gui-text="Make SVG pretty printed">false</param>
-    <param name="multipass" type="boolean" gui-text="Enable multipass">false</param>
-    <param name="precision" type="int" min="0" max="4" gui-text="Precision">1</param>
-</page>
-</param>
+    <!-- <param name="enable=inlineStyles" type="boolean" gui-text="inline styles (additional options)">false</param> -->
+    <!-- <param name="enable=cleanupListOfValues" type="boolean" gui-text="rounds list of values to the fixed precision">false</param> -->
+    <!-- <param name="enable=prefixIds" type="boolean" gui-text="prefix IDs">false</param> -->
+    <!-- <param name="enable=removeAttrs" type="boolean" gui-text="remove specified attributes">false</param> -->
+    <!-- <param name="enable=addAttributesToSVGElement" type="boolean" gui-text="adds attributes to an outer &lt;svg&gt; element">false</param> -->
+    <!-- <param name="enable=addClassesToSVGElement" type="boolean" gui-text="adds classnames to an outer &lt;svg&gt; element">false</param> -->
+    <!-- <param name="enable=removeElementsByAttr" type="boolean" gui-text="remove arbitrary elements by ID or className">false</param> -->
+    
     <output>
         <extension>.svg</extension>
         <mimetype>image/svg+xml</mimetype>
