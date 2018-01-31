@@ -18,4 +18,4 @@ So, I used that path.
 
 After this, find the option `SVGO Optimized SVG File (*.svg)` under File/Save As.
 
-![screen1](screen1.png) ![screen2](screen2.png)
+<img src="screen1.png" width="50%" /><img src="screen2.png" width="50%" />
