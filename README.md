@@ -16,4 +16,7 @@ On my system, I went to "preferences" and it showed this as "User extensions" un
 
 So, I used that path.
 
-After this, find the option "SVGO Optimized SVG File (*.svg)" under "Save As" in "File."
+After this, find the option `SVGO Optimized SVG File (\*.svg)` under File/Save As.
+
+![screen1](screen1.png)
+![screen2](screen2.png)
