@@ -1,12 +1,12 @@
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <_name>SVGO Optimized SVG File</_name>
+    <name>SVGO Optimized SVG File</name>
     <id>org.inkscape.output.svgo</id>
 <!--     <dependency type="executable">svgo</dependency> -->
     <output>
         <extension>.svg</extension>
         <mimetype>image/svg+xml</mimetype>
-        <_filetypename>SVGO Optimized SVG File (*.svg)</_filetypename>
-        <_filetypetooltip>SVG File</_filetypetooltip>
+        <filetypename>SVGO Optimized SVG File (*.svg)</filetypename>
+        <filetypetooltip>SVG File</filetypetooltip>
     </output>
     <script>
         <command>inkscape-svgo</command>

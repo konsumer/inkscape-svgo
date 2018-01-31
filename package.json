@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "description": "Optimize your SVGs with the awesome svgo.",
-  "devDependencies": {
-    "html-entities": "^1.2.1"
+  "dependencies": {
+    "svgo": "^1.0.4",
+    "yargs": "^11.0.0"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/konsumer/inkscape-svgo/issues"
   },
-  "homepage": "https://github.com/konsumer/inkscape-svgo#readme"
+  "homepage": "https://github.com/konsumer/inkscape-svgo#readme",
+  "bin": {
+    "inkscape-svgo": "inkscape-svgo.js"
+  }
 }
