@@ -1,16 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <name>SVGO Optimized SVG File</name>
-    <id>org.inkscape.output.svgo</id>
-<!--     <dependency type="executable">svgo</dependency> -->
-    <output>
-        <extension>.svg</extension>
-        <mimetype>image/svg+xml</mimetype>
-        <filetypename>SVGO Optimized SVG File (*.svg)</filetypename>
-        <filetypetooltip>SVG File</filetypetooltip>
-    </output>
-    <script>
-        <command>inkscape-svgo</command>
-    </script>
+    <_name>SVGO Optimized SVG File</_name>
+    <id>org.inkscape.output.konsumersvgo</id>
+<param name="options" type="notebook">
+<page name="page_1" gui-text="First page">
     <param name="enable=addAttributesToSVGElement" type="boolean" gui-text="adds attributes to an outer &lt;svg&gt; element">false</param>
     <param name="enable=addClassesToSVGElement" type="boolean" gui-text="adds classnames to an outer &lt;svg&gt; element">false</param>
     <param name="enable=cleanupAttrs" type="boolean" gui-text="cleanups attributes from newlines, trailing and repeating spaces">false</param>
@@ -28,6 +21,8 @@
     <param name="enable=mergePaths" type="boolean" gui-text="merges multiple paths in one if possible">false</param>
     <param name="enable=minifyStyles" type="boolean" gui-text="minifies styles and removes unused styles based on usage data">false</param>
     <param name="enable=moveElemsAttrsToGroup" type="boolean" gui-text="moves elements attributes to the existing group wrapper">false</param>
+</page>
+<page name="page_2" gui-text="Second page">
     <param name="enable=moveGroupAttrsToElems" type="boolean" gui-text="moves some group attributes to the content elements">false</param>
     <param name="enable=prefixIds" type="boolean" gui-text="prefix IDs">false</param>
     <param name="enable=removeAttrs" type="boolean" gui-text="removes specified attributes">false</param>
@@ -43,6 +38,8 @@
     <param name="enable=removeHiddenElems" type="boolean" gui-text="removes hidden elements (zero sized, with absent attributes)">false</param>
     <param name="enable=removeMetadata" type="boolean" gui-text="removes &lt;metadata&gt;">false</param>
     <param name="enable=removeNonInheritableGroupAttrs" type="boolean" gui-text="removes non-inheritable group’s presentational attributes">false</param>
+</page>
+<page name="page_3" gui-text="Third page">
     <param name="enable=removeRasterImages" type="boolean" gui-text="removes raster images (disabled by default)">false</param>
     <param name="enable=removeScriptElement" type="boolean" gui-text="removes &lt;script&gt; elements (disabled by default)">false</param>
     <param name="enable=removeStyleElement" type="boolean" gui-text="removes &lt;style&gt; element (disabled by default)">false</param>
@@ -55,6 +52,19 @@
     <param name="enable=removeXMLNS" type="boolean" gui-text="removes xmlns attribute (for inline svg, disabled by default)">false</param>
     <param name="enable=removeXMLProcInst" type="boolean" gui-text="removes XML processing instructions">false</param>
     <param name="enable=sortAttrs" type="boolean" gui-text="sorts element attributes (disabled by default)">false</param>
+    
     <param name="pretty" type="boolean" gui-text="Make SVG pretty printed">false</param>
     <param name="multipass" type="boolean" gui-text="Enable multipass">false</param>
+    <param name="precision" type="int" min="0" max="4" gui-text="Precision">1</param>
+</page>
+</param>
+    <output>
+        <extension>.svg</extension>
+        <mimetype>image/svg+xml</mimetype>
+        <_filetypename>SVGO Optimized SVG File (*.svg)</_filetypename>
+        <_filetypetooltip>SVG File</_filetypetooltip>
+    </output>
+    <script>
+        <command>inkscape-svgo</command>
+    </script>
 </inkscape-extension>
