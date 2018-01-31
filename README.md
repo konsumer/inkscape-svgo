@@ -6,7 +6,7 @@ Optimize your SVGs with the awesome [svgo](https://github.com/svg/svgo).
 
 Run `npm i -g konsumer/inkscape-svgo`
 
-Then copy `inkscape-svgo.inx` to your extensions directory (`$HOME/.config/inkscape/extensions`.)
+Then copy `inkscape-svgo.inx` to your extensions directory.
 
 On my system, I went to "preferences" and it showed this as "User extensions" under "System":
 
@@ -16,7 +16,7 @@ On my system, I went to "preferences" and it showed this as "User extensions" un
 
 So, I used that path.
 
-After this, find the option `SVGO Optimized SVG File (\*.svg)` under File/Save As.
+After this, find the option `SVGO Optimized SVG File (*.svg)` under File/Save As.
 
 ![screen1](screen1.png)
 ![screen2](screen2.png)
