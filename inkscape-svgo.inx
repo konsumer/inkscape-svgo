@@ -10,7 +10,7 @@
             <param name="multipass" type="boolean" gui-text="Enable multipass">true</param>  
             <param name="enable=cleanupAttrs" type="boolean" gui-text="cleanups attributes from newlines, trailing and repeating spaces">true</param>
             <param name="enable=cleanupEnableBackground" type="boolean" gui-text="remove or cleanup enable-background attribute when possible">true</param>
-            <param name="enable=cleanupIDs" type="boolean" gui-text="remove unused IDs and minifies used">false</param>
+            <param name="enable=cleanupIDs" type="boolean" gui-text="remove unused IDs and minify used">false</param>
             <param name="enable=cleanupNumericValues" type="boolean" gui-text="rounds numeric values to the fixed precision, remove default ‘px’ units">true</param>
             <param name="enable=collapseGroups" type="boolean" gui-text="collapses useless groups">true</param>
             <param name="enable=convertColors" type="boolean" gui-text="converts colors: rgb() to #rrggbb and #rrggbb to #rgb">true</param>
