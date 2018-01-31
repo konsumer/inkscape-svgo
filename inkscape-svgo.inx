@@ -42,10 +42,10 @@
             <param name="enable=removeDesc" type="boolean" gui-text="Remove &lt;desc&gt;">true</param>
             <param name="enable=removeDoctype" type="boolean" gui-text="Remove doctype declaration">true</param>
             <param name="enable=removeEditorsNSData" type="boolean" gui-text="Remove editors namespaces, elements and attributes">true</param>
-            <param name="enable=removeEmptyAttrs" type="boolean" gui-text="Remove empty attributes">false</param>
-            <param name="enable=removeEmptyContainers" type="boolean" gui-text="Remove empty container elements">false</param>
-            <param name="enable=removeEmptyText" type="boolean" gui-text="Remove empty &lt;text&gt; elements">false</param>
-            <param name="enable=removeHiddenElems" type="boolean" gui-text="Remove hidden elements (zero sized, with absent attributes)">false</param>
+            <param name="enable=removeEmptyAttrs" type="boolean" gui-text="Remove empty attributes">true</param>
+            <param name="enable=removeEmptyContainers" type="boolean" gui-text="Remove empty container elements">true</param>
+            <param name="enable=removeEmptyText" type="boolean" gui-text="Remove empty &lt;text&gt; elements">true</param>
+            <param name="enable=removeHiddenElems" type="boolean" gui-text="Remove hidden elements (zero sized, with absent attributes)">true</param>
         </page>
     </param>
     
