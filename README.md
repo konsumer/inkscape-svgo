@@ -11,7 +11,7 @@ Then copy `inkscape-svgo.inx` to your extensions directory.
 On my system, I went to "preferences" and it showed this as "User extensions" under "System":
 
 ```
-/Users/konsumer/Library/Application Support/org.inkscape.Inkscape/inkscape/extensions
+$HOME/Library/Application Support/org.inkscape.Inkscape/inkscape/extensions
 ```
 
 So, I used that path.
