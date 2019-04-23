@@ -27,7 +27,7 @@ argv.enable
     options.push(`--disable=${e.replace(/=false$/, '')}`)
   })
 
-const cmd = spawn(`${__dirname}/node_modules/.bin/svgo`, options)
+const cmd = spawn(`"${__dirname}/node_modules/.bin/svgo"`, options)
 cmd.stdout.on('data', data => {
   console.log(data.toString())
 })
