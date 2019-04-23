@@ -4,7 +4,7 @@ Optimize your SVGs with the awesome [svgo](https://github.com/svg/svgo).
 
 ## installation
 
-Run `npm i -g inkscape-svgo`
+Run `npm i -g svgo inkscape-svgo`
 
 Then copy `inkscape-svgo.inx` to your extensions directory.
 
