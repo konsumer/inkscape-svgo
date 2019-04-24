@@ -18,4 +18,4 @@ So, I used that path.
 
 After this, find the option `SVGO Optimized SVG File (*.svg)` under File/Save As.
 
-<img src="screen1.png" width="50%" /><img src="screen2.png" width="50%" />
+<img src="https://github.com/konsumer/inkscape-svgo/blob/master/screen1.png?raw=true" width="50%" /><img src="https://github.com/konsumer/inkscape-svgo/blob/master/screen2.png?raw=true" width="50%" />
