@@ -1,36 +1,34 @@
 #!/usr/bin/env node
 
-const spawn = require('child_process').spawn
-const argv = require('yargs').argv
+const opts = require('yargs').argv
+const SVGO = require('svgo')
+const { readFileSync } = require('fs')
 
-const options = []
-
-if (argv.pretty && argv.pretty === 'true') {
-  options.push('--pretty')
+const main = async () => {
+  const config = { js2svg: {} }
+  if (opts.multipass && opts.multipass === 'true') {
+    config.multipass = true
+  }
+  if (opts.pretty) {
+    config.js2svg.pretty = true
+    if (opts.indent) {
+      config.js2svg.indent = parseInt(opts.indent)
+    }
+  }
+  if (opts.precision) {
+    const precision = Math.min(Math.max(0, parseInt(opts.precision)), 20)
+    if (!isNaN(precision)) {
+      config.floatPrecision = precision
+    }
+  }
+  if (opts.enable && opts.enable.length) {
+    config.plugins = opts.enable.map(e => {
+      return { [e.replace(/(.+)=(true|false)/, '$1')]: !!e.match(/true$/) }
+    })
+  }
+  const svgo = new SVGO(config)
+  const data = readFileSync(opts._[0])
+  const result = await svgo.optimize(data, { path: opts._[0] })
+  console.log(result.data)
 }
-if (argv.multipass && argv.multipass === 'true') {
-  options.push('--multipass')
-}
-options.push(`--precision=${argv.precision}`)
-options.push('--output=-')
-options.push(`--input=${argv._[0]}`)
-
-argv.enable
-  .filter(e => e.match(/true$/))
-  .forEach(e => {
-    options.push(`--enable=${e.replace(/=true$/, '')}`)
-  })
-
-argv.enable
-  .filter(e => e.match(/false$/))
-  .forEach(e => {
-    options.push(`--disable=${e.replace(/=false$/, '')}`)
-  })
-
-const cmd = spawn('svgo', options)
-cmd.stdout.on('data', data => {
-  console.log(data.toString())
-})
-cmd.stderr.on('data', data => {
-  console.error(data.toString())
-})
+main()
