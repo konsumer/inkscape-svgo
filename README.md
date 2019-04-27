@@ -4,7 +4,7 @@ Optimize your SVGs with the awesome [svgo](https://github.com/svg/svgo).
 
 ## installation
 
-Grab the latest zip-file for your platform [here](https://github.com/konsumer/inkscape-svgo/releases) and extract it to your plugins directory. On my system, I went to "preferences" and it showed this as "User extensions" under "System":
+Grab the latest zip-file for your platform [here](https://github.com/konsumer/inkscape-svgo/releases/latest) and extract it to your plugins directory. On my system, I went to "preferences" and it showed this as "User extensions" under "System":
 
 ```
 $HOME/Library/Application Support/org.inkscape.Inkscape/inkscape/extensions
