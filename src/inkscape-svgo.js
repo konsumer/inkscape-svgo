@@ -9,7 +9,7 @@ const main = async () => {
   if (opts.multipass && opts.multipass === 'true') {
     config.multipass = true
   }
-  if (opts.pretty) {
+  if (opts.pretty && opts.pretty === 'true') {
     config.js2svg.pretty = true
     if (opts.indent) {
       config.js2svg.indent = parseInt(opts.indent)
