@@ -5,7 +5,15 @@ all: clean dist/mac.zip dist/linux.zip dist/windows.zip
 clean:
 	rm -rf dist
 
-.PHONY: all clean
+mac: dist/mac.zip
+linux: dist/linux.zip
+windows: dist/windows.zip
+
+.PHONY: all clean mac linux windows
+
+
+node_modules:
+	npm install
 
 dist/mac:
 	mkdir -p dist/mac/
@@ -15,10 +23,6 @@ dist/linux:
 
 dist/windows:
 	mkdir -p dist/windows/
-
-
-node_modules:
-	npm install
 
 
 dist/mac/inkscape-svgo: node_modules dist/mac
