@@ -5,6 +5,8 @@ all: clean dist/mac.zip dist/linux.zip dist/windows.zip
 clean:
 	rm -rf dist
 
+.PHONY: all clean
+
 dist/mac:
 	mkdir -p dist/mac/
 
