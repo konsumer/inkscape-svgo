@@ -36,7 +36,7 @@ dist/linux/inkscape-svgo.inx: dist/linux
 	cp inkscape-svgo.inx dist/linux/inkscape-svgo.inx
 
 dist/windows/inkscape-svgo.inx: dist/windows
-	sed 's/<command redir="extensions">inkscape-svgo/<command redir="extensions">inkscape-svgo.exe/g' inkscape-svgo.inx > dist/windows/inkscape-svgo.inx
+	sed 's/<command reldir="extensions">inkscape-svgo/<command reldir="extensions">inkscape-svgo.exe/g' inkscape-svgo.inx > dist/windows/inkscape-svgo.inx
 
 
 dist/mac.zip: dist/mac/inkscape-svgo dist/mac/inkscape-svgo.inx
