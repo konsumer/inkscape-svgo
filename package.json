@@ -1,6 +1,6 @@
 {
   "name": "inkscape-svgo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Optimize your SVGs with the awesome svgo.",
   "dependencies": {
     "svgo": "^1.2.2",
