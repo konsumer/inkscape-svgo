@@ -64,6 +64,6 @@
         <_filetypetooltip>SVG File</_filetypetooltip>
     </output>
     <script>
-        <command>inkscape-svgo</command>
+        <command redir="extensions">inkscape-svgo</command>
     </script>
 </inkscape-extension>

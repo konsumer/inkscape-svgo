@@ -16,7 +16,7 @@
     "url": "https://github.com/konsumer/inkscape-svgo/issues"
   },
   "homepage": "https://github.com/konsumer/inkscape-svgo#readme",
-  "bin": {
-    "inkscape-svgo": "inkscape-svgo.js"
+  "devDependencies": {
+    "pkg": "^4.3.7"
   }
 }
