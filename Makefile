@@ -26,13 +26,13 @@ dist/windows:
 
 
 dist/mac/inkscape-svgo: node_modules dist/mac
-	pkg src/inkscape-svgo.js --targets node8-osx-x64 --out-path=dist/mac
+	pkg src/inkscape-svgo.js --targets node10-osx-x64 --out-path=dist/mac
 
 dist/linux/inkscape-svgo: node_modules dist/linux
-	pkg src/inkscape-svgo.js --targets node8-linux-x64 --out-path=dist/linux
+	pkg src/inkscape-svgo.js --targets node10-linux-x64 --out-path=dist/linux
 
 dist/windows/inkscape-svgo.exe: node_modules dist/windows
-	pkg src/inkscape-svgo.js --targets node8-win-x64 --out-path=dist/windows
+	pkg src/inkscape-svgo.js --targets node10-win-x64 --out-path=dist/windows
 
 
 dist/mac/inkscape-svgo.inx: dist/mac
