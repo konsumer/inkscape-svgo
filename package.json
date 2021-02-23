@@ -3,8 +3,8 @@
   "version": "0.0.10",
   "description": "Optimize your SVGs with the awesome svgo.",
   "dependencies": {
-    "svgo": "^1.2.2",
-    "yargs": "^11.0.0"
+    "svgo": "^2.0.3",
+    "yargs": "^16.2.0"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/konsumer/inkscape-svgo#readme",
   "devDependencies": {
-    "pkg": "^4.3.7"
+    "pkg": "^4.4.9"
   }
 }
