@@ -22,12 +22,15 @@ const main = async () => {
     }
   }
   if (opts.enable && opts.enable.length) {
-    config.plugins = opts.enable.map(e => {
-      return { [e.replace(/(.+)=(true|false)/, '$1')]: !!e.match(/true$/) }
+    config.plugins = []
+    opts.enable.forEach(e => {
+      if (e.match(/true$/)) {
+        config.plugins.push({ name: e.replace(/(.+)=(true|false)/, '$1') })
+      }
     })
   }
 
-  const result = optimize(readFileSync(opts._[0]).toString(), { ...config })
+  const result = optimize(readFileSync(opts._[0]).toString(), config)
   console.log(result.data)
 }
 main()
