@@ -18,5 +18,8 @@
   "homepage": "https://github.com/konsumer/inkscape-svgo#readme",
   "devDependencies": {
     "pkg": "^4.4.9"
+  },
+  "bin": {
+    "inkscape-svgo": "src/inkscape-svgo.js"
   }
 }
