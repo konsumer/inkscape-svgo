@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const opts = require('yargs').argv
-const SVGO = require('svgo')
+const { optimize } = require('svgo')
 const { readFileSync } = require('fs')
 
 const main = async () => {
@@ -26,9 +26,8 @@ const main = async () => {
       return { [e.replace(/(.+)=(true|false)/, '$1')]: !!e.match(/true$/) }
     })
   }
-  const svgo = new SVGO(config)
-  const data = readFileSync(opts._[0])
-  const result = await svgo.optimize(data, { path: opts._[0] })
+
+  const result = optimize(readFileSync(opts._[0]).toString(), { ...config })
   console.log(result.data)
 }
 main()
